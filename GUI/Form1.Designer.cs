@@ -53,6 +53,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -124,6 +127,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.dataGridView1);
@@ -228,6 +233,8 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.Eliminar);
             this.panel5.Controls.Add(this.Editar);
             this.panel5.Controls.Add(this.label8);
@@ -239,6 +246,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(223, 249);
             this.panel5.TabIndex = 2;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label3
             // 
@@ -309,6 +317,30 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = false;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel6.Location = new System.Drawing.Point(679, 6);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(2, 537);
+            this.panel6.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel7.Location = new System.Drawing.Point(1, 24);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(678, 2);
+            this.panel7.TabIndex = 7;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gray;
+            this.panel8.Location = new System.Drawing.Point(13, 37);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(210, 2);
+            this.panel8.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,7 +350,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "AGUENDA DE CONTACTOS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -359,5 +391,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Editar;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
     }
 }

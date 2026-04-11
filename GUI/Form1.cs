@@ -25,6 +25,17 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
 
+            FormContacto frm = new FormContacto();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.Rows.Add(
+                    frm.Nombre,
+                    frm.Correo,
+                    frm.Telefono,
+                    frm.Direccion
+                );
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +50,11 @@ namespace GUI
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
