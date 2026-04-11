@@ -16,5 +16,31 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Rows.Add("Ana López", "ana@email.com", "78901234", "San Salvador");
+            dataGridView1.Rows.Add("Carlos Ramírez", "carlos@email.com", "70123456", "Santa Ana");
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
