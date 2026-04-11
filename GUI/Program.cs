@@ -1,15 +1,42 @@
-﻿using System;
+﻿using GUI.autenticacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GUI
 {
-    internal class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Punto de entrada principal para la aplicación.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // pre-validación para iniciar nuestro sistema
+            // a través de nuestro Login
+
+            // crear una instancia (objeto) de nuestra clase Login
+
+            Login formLogin = new Login();
+
+            // guardar el valor devuelto
+            var respuesta = formLogin.ShowDialog();
+
+            if (respuesta == DialogResult.OK)
+            {
+                // este método incializa el formulario a mostrar
+                Application.Run(new Form1());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
