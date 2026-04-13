@@ -34,10 +34,10 @@ namespace GUI
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            Nombre = textBox1.Text;
-            Correo = textBox2.Text;
-            Telefono = textBox3.Text;
-            Direccion = textBox4.Text;
+            Nombre = txtNombre.Text;
+            Correo = txtCorreo.Text;
+            Telefono = txtTelefono.Text;
+            Direccion = txtDireccion.Text;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
