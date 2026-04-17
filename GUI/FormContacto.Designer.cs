@@ -174,7 +174,7 @@
             // 
             // guna2ShadowPanel2
             // 
-            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel2.Controls.Add(this.Guardar);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.Blue;
             this.guna2ShadowPanel2.Location = new System.Drawing.Point(54, 198);
@@ -202,6 +202,8 @@
             this.ClientSize = new System.Drawing.Size(382, 303);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormContacto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormContacto";
