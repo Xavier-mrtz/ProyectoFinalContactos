@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        int contadorId = 1;
         //Variable del control
         bool menuExpandido = true;
 
@@ -22,12 +23,12 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
 
             FormContacto frm = new FormContacto();
@@ -35,6 +36,7 @@ namespace GUI
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 dataGridView1.Rows.Add(
+                    contadorId++,
                     frm.Nombre,
                     frm.Correo,
                     frm.Telefono,
@@ -43,7 +45,7 @@ namespace GUI
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
             {
@@ -59,22 +61,22 @@ namespace GUI
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void Label8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void Panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void Panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -84,12 +86,12 @@ namespace GUI
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void Panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -98,18 +100,22 @@ namespace GUI
         {
             dataGridView1.Columns.Clear();
 
+            dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("Nombre", "Nombre");
             dataGridView1.Columns.Add("Correo", "Correo");
             dataGridView1.Columns.Add("Telefono", "Teléfono");
             dataGridView1.Columns.Add("Direccion", "Dirección");
 
             DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
-            btnEditar.Name = "Editar";
-            btnEditar.HeaderText = "Acciones";
-            btnEditar.Text = "Editar";
-            btnEditar.UseColumnTextForButtonValue = true;
+            {
+                btnEditar.Name = "Editar";
+                btnEditar.HeaderText = "Acciones";
+                btnEditar.Text = "Editar";
+                btnEditar.UseColumnTextForButtonValue = true;
 
-            dataGridView1.Columns.Add(btnEditar);
+                dataGridView1.Columns.Add(btnEditar);
+            }
+           
 
         }
 
@@ -181,15 +187,16 @@ namespace GUI
             }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             timerMenu.Start();
         }
         // Valores de ancho
-        int anchoCerrado = 0;
-        int anchoAbierto = 120;
+        readonly int anchoCerrado = 0;
+        readonly int anchoAbierto = 120;
 
-        private void timerMenu_Tick(object sender, EventArgs e)
+
+        private void TimerMenu_Tick(object sender, EventArgs e)
         {
             if (menuExpandido)
             {
@@ -222,7 +229,33 @@ namespace GUI
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+
+            string texto = texBuscar.Text.ToLower();
+
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (fila.Cells["Nombre"].Value != null)
+                {
+                    string nombre = fila.Cells["Nombre"].Value.ToString().ToLower();
+
+                    fila.Visible = nombre.Contains(texto);
+                }
+            }
+        }
+
+        private void texBuscar_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -32,15 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Titulo = new System.Windows.Forms.Label();
+            this.BtnMenu = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.VerContactos = new System.Windows.Forms.Button();
             this.AñadirContacto = new System.Windows.Forms.Button();
+            this.Inicio = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelDetalles = new System.Windows.Forms.Panel();
+            this.textDireccion = new System.Windows.Forms.TextBox();
+            this.textTelefono = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
@@ -50,22 +57,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Buscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.texBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Inicio = new System.Windows.Forms.Button();
+            this.timerMenu = new System.Windows.Forms.Timer(this.components);
+            this.ButtonBuscar = new Guna.UI2.WinForms.Guna2Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textNombre = new System.Windows.Forms.TextBox();
-            this.textCorreo = new System.Windows.Forms.TextBox();
-            this.textTelefono = new System.Windows.Forms.TextBox();
-            this.textDireccion = new System.Windows.Forms.TextBox();
-            this.timerMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,13 +79,40 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
             this.panel1.Controls.Add(this.Titulo);
-            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Controls.Add(this.BtnMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1082, 60);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // Titulo
+            // 
+            this.Titulo.AutoSize = true;
+            this.Titulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.ForeColor = System.Drawing.Color.White;
+            this.Titulo.Location = new System.Drawing.Point(92, 14);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Size = new System.Drawing.Size(311, 32);
+            this.Titulo.TabIndex = 4;
+            this.Titulo.Text = "Agenda de Contactos";
+            this.Titulo.Click += new System.EventHandler(this.Titulo_Click);
+            // 
+            // BtnMenu
+            // 
+            this.BtnMenu.BackColor = System.Drawing.Color.Blue;
+            this.BtnMenu.FlatAppearance.BorderSize = 0;
+            this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMenu.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenu.ForeColor = System.Drawing.Color.White;
+            this.BtnMenu.Location = new System.Drawing.Point(0, 0);
+            this.BtnMenu.Name = "BtnMenu";
+            this.BtnMenu.Size = new System.Drawing.Size(50, 60);
+            this.BtnMenu.TabIndex = 3;
+            this.BtnMenu.Text = "☰";
+            this.BtnMenu.UseVisualStyleBackColor = false;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // panelMenu
             // 
@@ -100,10 +128,11 @@
             // 
             // VerContactos
             // 
-            this.VerContactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
+            this.VerContactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.VerContactos.FlatAppearance.BorderSize = 0;
             this.VerContactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VerContactos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerContactos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerContactos.ForeColor = System.Drawing.Color.White;
             this.VerContactos.Location = new System.Drawing.Point(0, 115);
             this.VerContactos.Name = "VerContactos";
             this.VerContactos.Size = new System.Drawing.Size(143, 38);
@@ -114,35 +143,50 @@
             // 
             // AñadirContacto
             // 
-            this.AñadirContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
+            this.AñadirContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.AñadirContacto.FlatAppearance.BorderSize = 0;
             this.AñadirContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AñadirContacto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AñadirContacto.ForeColor = System.Drawing.Color.White;
             this.AñadirContacto.Location = new System.Drawing.Point(0, 70);
             this.AñadirContacto.Name = "AñadirContacto";
             this.AñadirContacto.Size = new System.Drawing.Size(143, 38);
             this.AñadirContacto.TabIndex = 1;
-            this.AñadirContacto.Text = "Añadir Contacto";
+            this.AñadirContacto.Text = "Añadir Contactos";
             this.AñadirContacto.UseVisualStyleBackColor = false;
-            this.AñadirContacto.Click += new System.EventHandler(this.button2_Click);
+            this.AñadirContacto.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // Inicio
+            // 
+            this.Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.Inicio.FlatAppearance.BorderSize = 0;
+            this.Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Inicio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inicio.ForeColor = System.Drawing.Color.White;
+            this.Inicio.Location = new System.Drawing.Point(0, 27);
+            this.Inicio.Name = "Inicio";
+            this.Inicio.Size = new System.Drawing.Size(143, 38);
+            this.Inicio.TabIndex = 0;
+            this.Inicio.Text = "Inicio";
+            this.Inicio.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel3.Controls.Add(this.ButtonBuscar);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.panelFondo);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.Buscar);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.texBuscar);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(153, 60);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(929, 543);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             // 
             // panel7
             // 
@@ -169,7 +213,7 @@
             this.label5.Size = new System.Drawing.Size(167, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Lista de Contactos";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // panelFondo
             // 
@@ -181,7 +225,7 @@
             this.panelFondo.Size = new System.Drawing.Size(250, 543);
             this.panelFondo.TabIndex = 4;
             this.panelFondo.Visible = false;
-            this.panelFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.panelFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel4_Paint);
             // 
             // panelDetalles
             // 
@@ -202,7 +246,35 @@
             this.panelDetalles.Name = "panelDetalles";
             this.panelDetalles.Size = new System.Drawing.Size(223, 252);
             this.panelDetalles.TabIndex = 2;
-            this.panelDetalles.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.panelDetalles.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel5_Paint);
+            // 
+            // textDireccion
+            // 
+            this.textDireccion.Location = new System.Drawing.Point(73, 135);
+            this.textDireccion.Name = "textDireccion";
+            this.textDireccion.Size = new System.Drawing.Size(134, 22);
+            this.textDireccion.TabIndex = 11;
+            // 
+            // textTelefono
+            // 
+            this.textTelefono.Location = new System.Drawing.Point(71, 102);
+            this.textTelefono.Name = "textTelefono";
+            this.textTelefono.Size = new System.Drawing.Size(134, 22);
+            this.textTelefono.TabIndex = 10;
+            // 
+            // textCorreo
+            // 
+            this.textCorreo.Location = new System.Drawing.Point(64, 72);
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(134, 22);
+            this.textCorreo.TabIndex = 9;
+            // 
+            // textNombre
+            // 
+            this.textNombre.Location = new System.Drawing.Point(67, 42);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(134, 22);
+            this.textNombre.TabIndex = 8;
             // 
             // panel8
             // 
@@ -249,7 +321,7 @@
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 4;
             this.label8.Text = "Direccion:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // label7
             // 
@@ -305,6 +377,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Nombre,
             this.Correo,
             this.Telefono,
@@ -319,33 +392,24 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(19, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(621, 314);
+            this.dataGridView1.Size = new System.Drawing.Size(629, 314);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // Buscar
+            // texBuscar
             // 
-            this.Buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.Buscar.FlatAppearance.BorderSize = 0;
-            this.Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscar.Location = new System.Drawing.Point(465, 6);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(74, 25);
-            this.Buscar.TabIndex = 2;
-            this.Buscar.Text = "Buscar";
-            this.Buscar.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(179, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Buscar..";
+            this.texBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texBuscar.Location = new System.Drawing.Point(179, 7);
+            this.texBuscar.Name = "texBuscar";
+            this.texBuscar.Size = new System.Drawing.Size(280, 26);
+            this.texBuscar.TabIndex = 1;
+            this.texBuscar.Text = "Buscar..";
+            this.texBuscar.TextChanged += new System.EventHandler(this.texBuscar_TextChanged);
             // 
             // label2
             // 
@@ -357,18 +421,34 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar Contacto";
             // 
-            // Inicio
+            // timerMenu
             // 
-            this.Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(137)))), ((int)(((byte)(239)))));
-            this.Inicio.FlatAppearance.BorderSize = 0;
-            this.Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Inicio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inicio.Location = new System.Drawing.Point(0, 27);
-            this.Inicio.Name = "Inicio";
-            this.Inicio.Size = new System.Drawing.Size(143, 38);
-            this.Inicio.TabIndex = 0;
-            this.Inicio.Text = "Inicio";
-            this.Inicio.UseVisualStyleBackColor = false;
+            this.timerMenu.Interval = 10;
+            this.timerMenu.Tick += new System.EventHandler(this.TimerMenu_Tick);
+            // 
+            // ButtonBuscar
+            // 
+            this.ButtonBuscar.BorderRadius = 5;
+            this.ButtonBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonBuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.ButtonBuscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonBuscar.ForeColor = System.Drawing.Color.White;
+            this.ButtonBuscar.Location = new System.Drawing.Point(465, 5);
+            this.ButtonBuscar.Name = "ButtonBuscar";
+            this.ButtonBuscar.Size = new System.Drawing.Size(89, 25);
+            this.ButtonBuscar.TabIndex = 8;
+            this.ButtonBuscar.Text = "Buscar";
+            this.ButtonBuscar.Click += new System.EventHandler(this.ButtonBuscar_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Nombre
             // 
@@ -401,66 +481,6 @@
             this.Editar.Name = "Editar";
             this.Editar.Text = "Editar";
             this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // textNombre
-            // 
-            this.textNombre.Location = new System.Drawing.Point(67, 42);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(134, 22);
-            this.textNombre.TabIndex = 8;
-            // 
-            // textCorreo
-            // 
-            this.textCorreo.Location = new System.Drawing.Point(64, 72);
-            this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(134, 22);
-            this.textCorreo.TabIndex = 9;
-            // 
-            // textTelefono
-            // 
-            this.textTelefono.Location = new System.Drawing.Point(71, 102);
-            this.textTelefono.Name = "textTelefono";
-            this.textTelefono.Size = new System.Drawing.Size(134, 22);
-            this.textTelefono.TabIndex = 10;
-            // 
-            // textDireccion
-            // 
-            this.textDireccion.Location = new System.Drawing.Point(73, 135);
-            this.textDireccion.Name = "textDireccion";
-            this.textDireccion.Size = new System.Drawing.Size(134, 22);
-            this.textDireccion.TabIndex = 11;
-            // 
-            // timerMenu
-            // 
-            this.timerMenu.Interval = 10;
-            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Blue;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(50, 60);
-            this.btnMenu.TabIndex = 3;
-            this.btnMenu.Text = "☰";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // Titulo
-            // 
-            this.Titulo.AutoSize = true;
-            this.Titulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo.ForeColor = System.Drawing.Color.White;
-            this.Titulo.Location = new System.Drawing.Point(92, 14);
-            this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(311, 32);
-            this.Titulo.TabIndex = 4;
-            this.Titulo.Text = "Agenda de Contactos";
-            this.Titulo.Click += new System.EventHandler(this.Titulo_Click);
             // 
             // Form1
             // 
@@ -495,8 +515,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Buscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox texBuscar;
         private System.Windows.Forms.Panel panelFondo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelDetalles;
@@ -511,17 +530,19 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button Inicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.TextBox textDireccion;
         private System.Windows.Forms.TextBox textTelefono;
         private System.Windows.Forms.TextBox textCorreo;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Label Titulo;
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button BtnMenu;
+        private Guna.UI2.WinForms.Guna2Button ButtonBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

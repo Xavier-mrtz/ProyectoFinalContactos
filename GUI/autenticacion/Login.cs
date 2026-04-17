@@ -17,8 +17,32 @@ namespace GUI.autenticacion
             InitializeComponent();
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        
+
+        private void Login_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(240, 248, 255); // Fondo suave          
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PicUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PicContra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIniciarSesion_Click_1(object sender, EventArgs e)
+        {
+
             // validar las credenciales
             if (txtUsuario.Text.Equals("admin") && txtContraseña.Text.Equals("admin"))
             {
@@ -39,7 +63,12 @@ namespace GUI.autenticacion
 
                 txtUsuario.Focus();
             }
+
         }
 
+        private void InicioPanel_Paint(object sender, PaintEventArgs e)
+        {
+            this.BackColor = Color.FromArgb(240, 248, 255);
+        }
     }
 }
