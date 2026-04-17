@@ -43,6 +43,7 @@ namespace GUI.autenticacion
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             ((System.ComponentModel.ISupportInitialize)(this.PicUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicContra)).BeginInit();
+            this.InicioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@ namespace GUI.autenticacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(169, 69);
+            this.label1.Location = new System.Drawing.Point(103, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace GUI.autenticacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 161);
+            this.label2.Location = new System.Drawing.Point(66, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 2;
@@ -71,7 +72,7 @@ namespace GUI.autenticacion
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(137, 96);
+            this.txtUsuario.Location = new System.Drawing.Point(66, 96);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(296, 34);
@@ -80,7 +81,7 @@ namespace GUI.autenticacion
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(137, 189);
+            this.txtContraseña.Location = new System.Drawing.Point(66, 189);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(296, 34);
@@ -92,7 +93,7 @@ namespace GUI.autenticacion
             this.Label3.AutoSize = true;
             this.Label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(131, 21);
+            this.Label3.Location = new System.Drawing.Point(61, 21);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(135, 32);
             this.Label3.TabIndex = 5;
@@ -102,7 +103,7 @@ namespace GUI.autenticacion
             // 
             this.PicUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PicUsuario.Image = ((System.Drawing.Image)(resources.GetObject("PicUsuario.Image")));
-            this.PicUsuario.Location = new System.Drawing.Point(140, 64);
+            this.PicUsuario.Location = new System.Drawing.Point(66, 63);
             this.PicUsuario.Name = "PicUsuario";
             this.PicUsuario.Size = new System.Drawing.Size(30, 30);
             this.PicUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +115,7 @@ namespace GUI.autenticacion
             // 
             this.PicContra.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PicContra.Image = ((System.Drawing.Image)(resources.GetObject("PicContra.Image")));
-            this.PicContra.Location = new System.Drawing.Point(229, 157);
+            this.PicContra.Location = new System.Drawing.Point(110, 142);
             this.PicContra.Name = "PicContra";
             this.PicContra.Size = new System.Drawing.Size(43, 30);
             this.PicContra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +132,7 @@ namespace GUI.autenticacion
             this.btnIniciarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnIniciarSesion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(203, 263);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(124, 263);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(180, 45);
             this.btnIniciarSesion.TabIndex = 8;
@@ -142,7 +143,8 @@ namespace GUI.autenticacion
             // 
             this.InicioPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.InicioPanel.BorderRadius = 10;
-            this.InicioPanel.Location = new System.Drawing.Point(117, 12);
+            this.InicioPanel.Controls.Add(this.PicContra);
+            this.InicioPanel.Location = new System.Drawing.Point(56, 12);
             this.InicioPanel.Name = "InicioPanel";
             this.InicioPanel.Size = new System.Drawing.Size(348, 325);
             this.InicioPanel.TabIndex = 9;
@@ -152,20 +154,19 @@ namespace GUI.autenticacion
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(100, -1);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(16, -1);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(384, 359);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(439, 359);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.ClientSize = new System.Drawing.Size(488, 373);
             this.Controls.Add(this.btnIniciarSesion);
-            this.Controls.Add(this.PicContra);
             this.Controls.Add(this.PicUsuario);
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.txtContraseña);
@@ -174,12 +175,14 @@ namespace GUI.autenticacion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.InicioPanel);
             this.Controls.Add(this.guna2ShadowPanel1);
+            this.Location = new System.Drawing.Point(10, 10);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicContra)).EndInit();
+            this.InicioPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
